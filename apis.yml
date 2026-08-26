@@ -1,7 +1,18 @@
 aid: life-house
 name: Life House
-description: 'Life House is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: >-
+  Life House was a vertically integrated hotel software, brand and management company founded in
+  2017 and headquartered in Miami Beach, Florida. It built its own back-of-house operating system —
+  property management, revenue management, digital marketing and financial operations — for
+  independent hotels, ran more than 50 properties across the United States, Mexico and Canada, and
+  from 2021 sold the platform to third-party hoteliers. It raised over $100M from Inovia Capital,
+  KAYAK, Tiger Global, Trinity Ventures, Sound Ventures and JLL. In December 2024 Life House
+  combined its management portfolio with Lark Hotels to form Lark Hospitality — in which Lark holds
+  the controlling interest — and spun its AI revenue-management platform out as Diamo. Life House
+  never operated a public developer program: it was a consumer of hotel APIs (notably the Mews Open
+  API) rather than a publisher of one, lifehousehotels.com now 301-redirects to larkhotels.com, no
+  api/developer/docs subdomain resolves in DNS, and its GitHub organization holds a single fork of
+  a third-party JavaScript library.
 url: https://raw.githubusercontent.com/api-evangelist/life-house/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
@@ -12,6 +23,13 @@ created: '2026-08-25'
 modified: '2026-08-25'
 tags:
 - Company
+- Hospitality
+- Hotels
+- Travel
+- Hotel Management Software
+- Property Management
+- Revenue Management
+- Real Estate
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +37,54 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: LLMsTxt
+  url: llms/life-house-llms.txt
+- type: WellKnownProbe
+  url: well-known/life-house-well-known.yml
+- type: DomainSecurity
+  url: security/life-house-domain-security.yml
 - type: Website
+  url: https://www.lifehousehotels.com/
+- type: SecondaryMarket
   url: https://www.hiive.com/securities/life-house-stock
+- type: Successor
+  url: https://www.larkhospitality.com/
+- type: SuccessorProduct
+  url: https://www.diamo.ai/
+- type: GitHubOrganization
+  url: https://github.com/Life-House
+- type: LinkedIn
+  url: https://www.linkedin.com/company/life-house-hotels
+x-enrichment:
+  date: '2026-08-25'
+  status: minimal
+  artifacts_added: 3
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: defunct
+  detail: >-
+    Life House was absorbed into the Lark Hospitality joint venture in December 2024 and its own
+    domain lifehousehotels.com now returns HTTP 301 to www.larkhotels.com for every path, including
+    /openapi.json and all eight /.well-known/ discovery paths; no api/developer/docs subdomain
+    resolves in DNS, and its GitHub organization — renamed to Diamo after the revenue-management
+    platform was spun out — holds one public repository, a fork of the third-party Numeral-js
+    library.
+  evidence:
+  - url: https://www.lifehousehotels.com/
+    status: 301
+  - url: https://www.lifehousehotels.com/openapi.json
+    status: 403
+  - url: https://www.lifehousehotels.com/llms.txt
+    status: 404
+  - url: https://www.lifehousehotels.com/.well-known/agent-card.json
+    status: 404
+  - url: https://www.lifehousehotels.com/.well-known/security.txt
+    status: 404
+  - url: https://api.github.com/orgs/Life-House
+    status: 200
+  - url: https://www.diamo.ai/openapi.json
+    status: 404
+  - url: https://www.hiive.com/securities/life-house-stock
+    status: 200
+  checked: '2026-08-25'

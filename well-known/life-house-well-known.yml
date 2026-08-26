@@ -1,0 +1,46 @@
+name: Life House — /.well-known/ probe
+description: >-
+  Probe of the standard /.well-known/ discovery surface on the only host Life House ever
+  controlled. lifehousehotels.com issues an HTTP 301 to www.larkhotels.com (AmazonS3 origin
+  behind CloudFront) for every path following the December 2024 Lark Hospitality joint venture,
+  so every probe below is answered by the successor brand's edge and every discovery document
+  returns 404. No pointer of type WellKnown is emitted: this file records an absence, not a
+  served surface.
+generated: '2026-08-25'
+method: probed
+source: https://www.lifehousehotels.com/.well-known/
+hosts:
+- host: www.lifehousehotels.com
+  note: >-
+    301-redirects to https://www.larkhotels.com/ (server AmazonS3, via CloudFront). Probed with a
+    browser User-Agent and following redirects; the redirect target answers 403 for HTML paths
+    (bot filtering) and 404 for every /.well-known/ path.
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+summary:
+  hosts_probed: 1
+  documents_probed: 8
+  documents_served: 0
