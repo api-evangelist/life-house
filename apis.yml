@@ -53,7 +53,7 @@ tags:
 - Hotel Management Software
 - Property Management
 - Revenue Management
-- Real-Estate
+- Real Estate
 tags_raw:
 - Company
 - Hospitality
@@ -63,6 +63,7 @@ tags_raw:
 - Property Management
 - Revenue Management
 - Real Estate
+- Real-Estate
 apis: []
 maintainers:
 - FN: Kin Lane
